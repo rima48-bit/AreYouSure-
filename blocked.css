@@ -1,0 +1,178 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+.q-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ddd;
+  transition: background 0.3s;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:"Pixelify Sans",sans-serif;
+  background: url("icons/backie.png") no-repeat center center fixed;
+  background-size: cover;
+
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+}
+#app{
+    width:650px;
+    max-width:96vw;
+    background: #FFE37A;
+    border:2px solid #6D4C41;
+    border-radius:2px;
+    overflow:hidden;
+    padding:0;
+    box-shadow:4px 4px 0 #b8b8b8;
+}
+
+.title-bar{
+    height:28px;
+    background:#593b1e;
+    border-bottom:2px solid #775545;
+
+    display:flex;
+    align-items:center;
+
+    padding:0 8px;
+}
+
+.title-decoration{
+    flex:1;
+    height:3px;
+    margin:0 8px;
+
+    background:repeating-linear-gradient(
+        to right,
+        #9b6a63 0 2px,
+        transparent 2px 4px
+    );
+}
+
+.title-text{
+    font-size:13px;
+    white-space:nowrap;
+    color: white;
+}
+
+.window-controls{
+    display:flex;
+    gap:4px;
+}
+
+.window-btn{
+    width:12px;
+    height:12px;
+    background:#f7e6d5;
+    border:2px solid #9b6a63;
+}
+
+.window-content{
+    padding:28px;
+}
+.logo { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #888; margin-bottom: 0.5rem; }
+.site-tag { display: inline-block; background: #E24B4A; color: #fff; font-size: 12px; font-weight: 500; padding: 3px 10px; border-radius: 20px; margin-bottom: 1rem; }
+h2 { font-size: 20px; font-weight: 500; margin-bottom: 0.4rem; }
+.subtitle { font-size: 14px; color: #363535; line-height: 1.1; margin-bottom: 1.5rem; }
+.progress-bar { display: flex; gap: 6px; margin-bottom: 1.5rem; }
+.prog-dot { height: 4px; flex: 1; border-radius: 2px; background: #e5e5e5; transition: background 0.3s; }
+.prog-dot.done { background: #ff5959; }
+.prog-dot.active { background: #a82d04; }
+.shame-row { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #888; margin-bottom: 1.5rem; }
+.shame-bar { flex: 1; height: 6px; background: #eee; border-radius: 3px; overflow: hidden; }
+.shame-fill { height: 100%; border-radius: 3px; transition: width 0.6s ease, background 0.6s; }
+
+.card {
+  background: #FFF8E5;
+
+  border: 2px solid #220700;
+
+  border-radius: 2px;
+
+  padding: 20px;
+
+  margin-bottom: 18px;
+}
+.disappointed{
+    text-align:center;
+    margin:20px 0;
+}
+
+.disappointed img{
+    width:160px;
+    height:auto;
+    image-rendering:pixelated;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:"Pixelify Sans",sans-serif;
+  background: #ffbcb1;
+  color: #000000;
+
+  border: 2px solid #8d6356;
+
+  border-radius: 2px;
+  opacity: 100%;
+  box-shadow:
+    inset 2px 2px 0 #fff6ef,
+    inset -2px -2px 0 #35261e;
+
+  cursor: pointer;
+}
+.btn-primary:active {
+  box-shadow:
+    inset -2px -2px 0 #fff6ef,
+    inset 2px 2px 0 #9d3f11;
+}
+.btn-primary:hover { opacity: 0.88; }
+.btn-primary:disabled { opacity: 0.35; cursor: not-allowed; }
+.btn-primary:hover { background: #f5f4f0; }
+.btn-ghost { 
+  width: 100%; 
+  padding: 12px; 
+  background: #ffbcb1; 
+  color: #000000; 
+  border: 0.5px solid #2a1717; 
+  border-radius: 2px; 
+  font-size: 13px; 
+  cursor: pointer; 
+  margin-top: 8px; 
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:"Pixelify Sans",sans-serif;
+  box-shadow:
+    inset 2px 2px 0 #fff6ef,
+    inset -2px -2px 0 #35261e;
+
+  cursor: pointer;
+}
+.btn-ghost:hover { background: #f5f4f0; }
+.disappointed { text-align: center; font-size: 42px; margin: 0.5rem 0; }
+.timer { font-size: 24px; font-weight: 500; color: #E24B4A; text-align: center; margin: 0.5rem 0; font-variant-numeric: tabular-nums; }
+.checkmark-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 1rem 0; }
+.img-tile { aspect-ratio: 1; border-radius: 10px; border: 2px solid transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 30px; background: #f0eeea; transition: border-color 0.15s, transform 0.1s; user-select: none; }
+.img-tile:hover { transform: scale(0.96); }
+.img-tile.selected { border-color: #E24B4A; background: #fff0f0; }
+input[type="text"], textarea {
+  width: 100%; padding: 9px 12px; border: 0.5px solid #ccc; border-radius: 8px;
+  font-size: 14px; font-family: inherit; background: #fff; color: #1a1a1a; outline: none;
+}
+input[type="text"]:focus, textarea:focus { border-color: #E24B4A; box-shadow: 0 0 0 3px rgba(226,75,74,0.1); }
+.typing-target { font-size: 13px; font-family: monospace; background: #f0eeea; border-radius: 8px; padding: 10px 12px; margin-bottom: 10px; line-height: 1.8; color: #666; }
+.math-q { font-size: 32px; font-weight: 500; text-align: center; padding: 1rem; }
+.drag-word { display: inline-block; padding: 5px 12px; background: #f0eeea; border: 0.5px solid #ccc; border-radius: 20px; margin: 4px; font-size: 13px; cursor: grab; user-select: none; }
+.drag-word.in-zone { cursor: pointer; }
+.drop-zone { min-height: 44px; border: 1.5px dashed #ccc; border-radius: 8px; padding: 6px; display: flex; flex-wrap: wrap; align-items: center; gap: 4px; margin: 8px 0; transition: border-color 0.2s, background 0.2s; }
+.drop-zone.over { border-color: #E24B4A; background: rgba(226,75,74,0.05); }
+label { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; cursor: pointer; margin-bottom: 10px; line-height: 1.5; }
+.error { color: #E24B4A; font-size: 13px; text-align: center; margin-top: 8px; min-height: 20px; }
+.success-screen { text-align: center; padding: 1rem 0; }
+.access-timer { font-size: 40px; font-weight: 500; color: #E24B4A; font-variant-numeric: tabular-nums; margin: 1rem 0; }
+.q-dots { display: flex; gap: 8px; margin-top: 6px; }
+.q-dot { width: 10px; height: 10px; border-radius: 50%; background: #ddd; transition: background 0.3s; }

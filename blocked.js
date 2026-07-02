@@ -198,8 +198,8 @@ function renderCaptchaScreen(tiles, label, nextBtnId, errId) {
     <div class="checkmark-grid" id="captcha-grid">
       ${tiles.map((t,i) =>
         `<div class="img-tile" data-i="${i}" data-correct="${t.c}">
-          <span style="font-size:28px">${t.e}</span>
-          ${t.label ? `<span style="font-size:9px;color:#888;margin-top:2px">${t.label}</span>` : ""}
+          <div class="tile-icon">${t.e}</div>
+          <div class="tile-label">${t.label || ""}</div>
         </div>`
       ).join("")}
     </div>
@@ -224,7 +224,7 @@ function renderCaptchaScreen(tiles, label, nextBtnId, errId) {
 }
 
 const TILES1 = [
-  {e:"🥗",c:true},{e:"📱",c:false},{e:"🏃",c:true},
+  {e:"Pretend to be productive",label:"Sleep",c:true},{e:"📱",c:false},{e:"🏃",c:true},
   {e:"🛋️",c:false},{e:"📚",c:true},{e:"🍩",c:false},
   {e:"😴",c:false},{e:"💧",c:true},{e:"🎮",c:false}
 ];
@@ -237,8 +237,8 @@ const TILES2 = [
 ];
 
 function renderCaptcha()  { renderCaptchaScreen(TILES1,"Choose what you should do before doomscrolling","btn-cap","cap-err"); }
-function renderCaptcha2() { renderCaptchaScreen(TILES2,"Fine. Since you're determined to procrastinate, at least pretend to improve your life first","btn-cap2","cap-err2"); }
-function renderCaptcha2() { renderCaptchaScreen(TILES2,"pick all you should do instead of doomscrolling","btn-cap2","cap-err2"); }
+function renderCaptcha2() { renderCaptchaScreen(TILES2,"Fine. Since you're determined to procrastinate, at least pretend to improve your life first. Pick all you should do instead of doomscrolling","btn-cap2","cap-err2"); }
+
 // ── TYPING HELPER ──────────────────────────────────────────────
 function renderTypingScreen(target, seconds, minAcc) {
   setHTML(`

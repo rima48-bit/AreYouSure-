@@ -225,7 +225,7 @@ function renderCaptchaScreen(tiles, label, nextBtnId, errId) {
 
 const TILES1 = [
   {e:"Pretend to be productive",label:"Sleep",c:true},{e:"📱",c:false},{e:"🏃",c:true},
-  {e:"🛋️",c:false},{e:"📚",c:true},{e:"🍩",c:false},
+  {e:"study?",c:false},{e:"📚",c:true},{e:"🍩",c:false},
   {e:"😴",c:false},{e:"💧",c:true},{e:"🎮",c:false}
 ];
 const TILES2 = [

@@ -130,17 +130,39 @@ function on(id, event, fn) {
   if (el) el.addEventListener(event, fn);
 }
 
-function goNext() { currentStep++; render(); }
+function goNext() {
+  if (currentStep < STEPS.length - 1) {
+    currentStep++;
+  }
+
+  console.log("GO NEXT →", currentStep, STEPS[currentStep]);
+
+  render();
+}
 
 function render() {
+  const step = STEPS[currentStep];
+
+  if (!step) {
+    console.warn("Invalid step index:", currentStep);
+    return renderDone();
+  }
+
   const map = {
-    intro: renderIntro, captcha: renderCaptcha, captcha2: renderCaptcha2,
-    typing: renderTyping, typing2: renderTyping2,
-    math: renderMath, math2: renderMath2,
-    pledge: renderPledge, roast: renderRoast,
-    confirm: renderConfirm, done: renderDone,
+    intro: renderIntro,
+    captcha: renderCaptcha,
+    captcha2: renderCaptcha2,
+    typing: renderTyping,
+    typing2: renderTyping2,
+    math: renderMath,
+    math2: renderMath2,
+    pledge: renderPledge,
+    roast: renderRoast,
+    confirm: renderConfirm,
+    done: renderDone,
   };
-  (map[STEPS[currentStep]] || renderDone)();
+
+  (map[step] || renderDone)();
 }
 
 // ── INTRO ──────────────────────────────────────────────────────
@@ -224,16 +246,20 @@ function renderCaptchaScreen(tiles, label, nextBtnId, errId) {
 }
 
 const TILES1 = [
-  {e:"productive",label:"Sleep",c:true},{e:"doomscroll",c:false},{e:"exercise",c:true},
-  {e:"study?",c:false},{e:"read a lot",c:true},{e:"munch on junk",c:false},
-  {e:"slepppzz",c:false},{e:"hydrateee",c:true},{e:"play minecraft",c:false}
+  {e:"locked in",c:true},{e:"brainrot",c:false},{e:"hydrate",c:true},
+  {e:"gym arc",c:true},{e:"study",c:true},{e:"cope",c:false},
+  {e:"bed rot",c:false},{e:"grind XP",c:true},{e:"doomscroll",c:false}
 ];
 const TILES2 = [
-  {e:"📧",c:true,label:"reply emails"},{e:"🧘",c:true,label:"meditate"},
-  {e:"🛒",c:false,label:"online shop"},{e:"📊",c:true,label:"finish report"},
-  {e:"🐈",c:false,label:"cat videos"},{e:"🏋️",c:true,label:"work out"},
-  {e:"💤",c:false,label:"nap"},{e:"📝",c:true,label:"take notes"},
-  {e:"🎲",c:false,label:"play games"}
+  { e: "locked in", c: true, label: "locked in" },
+  { e: "", c: false, label: "brainrot" },
+  { e: "", c: true, label: "hydrate" },
+  { e: "", c: true, label: "gym arc" },
+  { e: "", c: true, label: "study" },
+  { e: "", c: false, label: "cope" },
+  { e: "🛏️", c: false, label: "bed rot" },
+  { e: "⭐", c: true, label: "grind XP" },
+  { e: "📱", c: false, label: "doomscroll" }
 ];
 
 function renderCaptcha()  { renderCaptchaScreen(TILES1,"Choose what you should do before doomscrolling","btn-cap","cap-err"); }
@@ -280,9 +306,9 @@ function renderTypingScreen(target, seconds, minAcc) {
           document.getElementById("typ-timer").textContent = seconds;
           document.getElementById("typ-acc").textContent = "Time's up — try again";
           document.getElementById("btn-typ").disabled = true;
-        }, 3000);
+        }, 1000);
       }
-    }, 3000);
+    }, 1000);
   });
 
   inp.addEventListener("input", () => {
@@ -304,8 +330,8 @@ function renderTypingScreen(target, seconds, minAcc) {
   on("btn-typ","click",goNext);
 }
 
-const T1 = "The time I spend scrolling could be used to learn a new skill, finish my work, or simply rest with intention. I am making a conscious choice right now.";
-const T2 = "I acknowledge that my time is finite, my tasks are real, and doomscrolling is a choice I make consciously and must now pay for with this typing test.";
+const T1 = "By typing this sentence I agree that doomscrolling until 2 AM is a skill nobody puts on a resume. I also accept that the algorithm does not miss me when I leave.";
+const T2 = "I hereby renounce brainrot, embrace locked-in mode, and promise to grind XP before watching another cat video.";
 
 function renderTyping()  { renderTypingScreen(T1, 45, 85); }
 function renderTyping2() { renderTypingScreen(T2, 30, 90); }
@@ -362,7 +388,7 @@ function renderMathScreen(questions, title) {
 
 function renderMath()  {
   renderMathScreen([
-    {q:"17 × 8 = ?",a:"136"},{q:"What is 15% of 240?",a:"36"},{q:"√144 = ?",a:"12"}
+    {q:"(15 × 8) ÷ (3 × 5)=?",a:"8"},{q:"What is 15% of 240?",a:"36"},{q:"(2⁵ × 2³) ÷ 2⁸",a:"1"}
   ], "Cognitive check");
 }
 function renderMath2() {

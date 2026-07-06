@@ -257,7 +257,7 @@ const TILES2 = [
   { e: "", c: true, label: "gym arc" },
   { e: "", c: true, label: "study" },
   { e: "", c: false, label: "cope" },
-  { e: "🛏️", c: false, label: "bed rot" },
+  { e: "", c: false, label: "bed rot" },
   { e: "⭐", c: true, label: "grind XP" },
   { e: "📱", c: false, label: "doomscroll" }
 ];

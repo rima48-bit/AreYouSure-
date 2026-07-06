@@ -388,7 +388,7 @@ function renderMathScreen(questions, title) {
 
 function renderMath()  {
   renderMathScreen([
-    {q:"(15 × 8) ÷ (3 × 5)=?",a:"8"},{q:"What is 15% of 240?",a:"36"},{q:"(2⁵ × 2³) ÷ 2⁸",a:"1"}
+    {q:"(15 × 9) ÷ (3 × 5)=?",a:"8"},{q:"What is 15% of 240?",a:"36"},{q:"(2⁵ × 2³) ÷ 2⁸",a:"1"}
   ], "Cognitive check");
 }
 function renderMath2() {

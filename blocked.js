@@ -259,7 +259,7 @@ const TILES2 = [
   { e: "", c: false, label: "cope" },
   { e: "", c: false, label: "bed rot" },
   { e: "", c: true, label: "grind XP" },
-  { e: "📱", c: false, label: "doomscroll" }
+  { e: "", c: false, label: "doomscroll" }
 ];
 
 function renderCaptcha()  { renderCaptchaScreen(TILES1,"Choose what you should do before doomscrolling","btn-cap","cap-err"); }

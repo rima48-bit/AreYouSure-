@@ -496,7 +496,7 @@ const ROASTS = [
   "Your future self is writing a strongly-worded letter to your present self.",
   "The tasks you're avoiding have feelings. They're hurt.",
   "You've spent more time on verification than the actual task would have taken.",
-  "A study shows you'll feel guilty about this in exactly 7 minutes. The study is you, right now. Get the fck back to work",
+  "A study shows you'll feel guilty about this in exactly 7 minutes. The study is you, right now. ",
 ];
 
 function renderRoast() {

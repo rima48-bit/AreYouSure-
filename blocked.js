@@ -190,7 +190,7 @@ function renderIntro() {
     ${progressHtml(0)}
     ${shameHtml()}
     <div class="card">
-      <label><input type="checkbox" id="ack1"> I am aware my productivity today has been...</label>
+      <label><input type="checkbox" id="ack1"> I am aware my productivity today has</label>
       <label><input type="checkbox" id="ack2"> I understand that opening this site will not magically improve my life.</label>
       <label><input type="checkbox" id="ack3"> I accept full responsibility for the next 47 minutes disappearing.</label>
     </div>
